@@ -77,20 +77,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h2>Pomodoro Clock</h2>
-        <Countdown seconds={this.state.secLeft}
-                   toggle={this.toggleTimer}
-                   isOn={this.state.isOn}/>
-        <SessionSetting set={this.setSesstion}
-                        timeLength={this.state.sessionLength} />
-        <BreakSetting set={this.setBreak}
-                      timeLength={this.state.breakLength} />
+        <div className="container">
+          <h2>Pomodoro Clock</h2>
+          <Countdown seconds={this.state.secLeft} />
+          <SessionSetting set={this.setSesstion}
+                          timeLength={this.state.sessionLength} />
+          <BreakSetting set={this.setBreak}
+                        timeLength={this.state.breakLength} />
+          <StartButton toggle={this.toggleTimer}
+                       isOn={this.state.isOn} />
+        </div>
       </div>
     )
   }
 }
 
-let Countdown = ({seconds, toggle, isOn}) => {
+let Countdown = ({seconds}) => {
   let parseSeconds = (sec) => {
     let m = Math.floor(seconds / 60)
     let s = sec % 60
@@ -100,6 +102,13 @@ let Countdown = ({seconds, toggle, isOn}) => {
   return(
     <div>
       <h1>{parseSeconds(seconds)}</h1>
+    </div>
+  )
+}
+
+let StartButton = ({toggle, isOn}) => {
+  return(
+    <div className="start">
       <button onClick={toggle}>{isOn ? 'Stop' : 'Start'}</button>
     </div>
   )
@@ -107,7 +116,7 @@ let Countdown = ({seconds, toggle, isOn}) => {
 
 
 let SessionSetting = ({set, timeLength}) => (
-  <div>
+  <div className="set">
     <h3>session length</h3>
     <button onClick={set}>+</button>
     <span>{timeLength}</span>
@@ -116,7 +125,7 @@ let SessionSetting = ({set, timeLength}) => (
 )
 
 let BreakSetting = ({set, timeLength}) => (
-  <div>
+  <div className="set">
     <h3>break length</h3>
     <button onClick={set}>+</button>
     <span>{timeLength}</span>

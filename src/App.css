@@ -1,8 +1,60 @@
-.App {
-  text-align: center;
+h1, h2, h3, p{
+  font-weight: 200;
 }
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button {
+  border-width: 0;
+  background-color: #efefef;
+}
+button:focus {
+  outline: 0;
+}
+.App {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom right, #c8c897, #6590A2);
+}
+.container {
+  margin: 0 auto;
+  position: relative;
+  top: 50vh;
+  transform: translateY(-50%);
+  width: 290px;
+  height: 462px;
+  text-align: center;
+  background-color: #1E384C;
+  color: #efefef;
+  border-radius: 5px;
+}
+.container h2 {
+  margin: 0;
+  padding: 0.7em;
+}
+.container h1 {
+  font-size: 4em;
+  margin: 0.6em 0;
+}
+.set {
+  display: inline-block;
+  margin: 10px;
+  font-size: 1em;
+}
+.set h3 {
+  margin-bottom: 0;
+}
+.set button {
+  margin: 5px;
+  background-color: transparent;
+  color: #efefef;
+  font-size: 1.2em;
+  cursor: pointer;
+}
+.start button{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  font-size: 1.5em;
+  height: 2.5em;
+  border-radius: 0 0 5px 5px;
+  letter-spacing: 1px;
 }
