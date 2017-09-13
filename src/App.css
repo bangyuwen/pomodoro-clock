@@ -15,6 +15,8 @@ button:focus {
 }
 .container {
   margin: 0 auto;
+  padding: 1em;
+  box-sizing: border-box;
   position: relative;
   top: 50vh;
   transform: translateY(-50%);
@@ -31,21 +33,29 @@ button:focus {
 }
 .container h1 {
   font-size: 4em;
-  margin: 0.6em 0;
+  margin: 0.5em 0;
+  margin-bottom: 0;
+  line-height: 1em;
+}
+.type {
+  margin: 0 auto;
+  /*background-color: green;*/
+  width: 100px;
 }
 .set {
   display: inline-block;
-  margin: 10px;
+  margin: 2em 0.5em;
   font-size: 1em;
 }
 .set h3 {
   margin-bottom: 0;
+  font-size: 0.7em;
 }
 .set button {
   margin: 5px;
   background-color: transparent;
   color: #efefef;
-  font-size: 1.2em;
+  font-size: 1em;
   cursor: pointer;
 }
 .start button{

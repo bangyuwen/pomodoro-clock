@@ -50,7 +50,6 @@ class App extends Component {
     }
   }
   toggleTimer() {
-    console.log(this.state.isOn)
     if (this.state.isOn) {
       this.setState({isOn: false})
       return clearInterval(this.timer)
@@ -79,7 +78,8 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <h2>Pomodoro Clock</h2>
-          <Countdown seconds={this.state.secLeft} />
+          <Countdown seconds={this.state.secLeft}
+                     type={this.state.type} />
           <SessionSetting set={this.setSesstion}
                           timeLength={this.state.sessionLength} />
           <BreakSetting set={this.setBreak}
@@ -92,7 +92,7 @@ class App extends Component {
   }
 }
 
-let Countdown = ({seconds}) => {
+let Countdown = ({seconds, type}) => {
   let parseSeconds = (sec) => {
     let m = Math.floor(seconds / 60)
     let s = sec % 60
@@ -102,6 +102,7 @@ let Countdown = ({seconds}) => {
   return(
     <div>
       <h1>{parseSeconds(seconds)}</h1>
+      <h3 className="type">{type}</h3>
     </div>
   )
 }
